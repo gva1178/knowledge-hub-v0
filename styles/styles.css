@@ -1,0 +1,73 @@
+
+
+body {
+    background: linear-gradient(180deg, rgb(39, 212, 212), rgb(129, 22, 129));
+    background-repeat: no-repeat;   
+}
+
+header {
+    background: rgba(0, 47, 255, 0.993);
+    color: white;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: left;
+
+}
+
+#header-icon {
+    width: 80%;
+    height: auto;
+}
+
+.person-card {
+    display: grid;
+    min-width: 100px;
+    background:rgb(39, 136, 104);
+    grid-template-rows: repeat(1fr, 4);
+    grid-template-columns: repeat(1fr, 4);
+
+    grid-template-areas: 
+        "photo photo name name"
+        "photo photo role role"
+        "skill skill skill skill"
+        "campaign campaign campaign campaign";
+}
+
+.profile-pic {
+    background: tan;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    grid-area: photo;
+}
+
+.person-name {
+    background: red;
+    grid-area: name;
+    justify-self: left;
+    align-self: center;
+}
+
+.person-role {
+    background: rgb(39, 212, 212);
+    grid-area: role;
+}
+
+.person-skill {
+    background: saddlebrown;
+    grid-area: skill;
+}
+
+.person-campaign {
+    background: slateblue;
+    grid-area: campaign;
+}
+
+
+
+h1 {
+    /*background: aqua;
+    */
+}
