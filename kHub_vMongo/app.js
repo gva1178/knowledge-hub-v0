@@ -10,12 +10,15 @@ var usersRouter = require('./routes/users');
 const liveReload = require("livereload");
 const liveReloadServer = liveReload.createServer();
 liveReloadServer.watch(path.join(__dirname, "public"));
+//const connectLiveReload = require("connect-livereload");
 
 var app = express();
 
+//app.use(connectLiveReload);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
