@@ -1,5 +1,6 @@
-extends layout
+// Current solution is a bit of a workaround -- temporary solution
+// to use a plain html file instead of a Jade template file
+// (for ease of use/understanding for others who may modify
+// this codebase)
 
-block content
-  h1= title
-  p Welcome to #{title}
+include index.html
