@@ -7,6 +7,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+const liveReload = require("livereload");
+const liveReloadServer = liveReload.createServer();
+liveReloadServer.watch(path.join(__dirname, "public"));
+
 var app = express();
 
 // view engine setup
