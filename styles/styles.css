@@ -5,7 +5,7 @@ body {
     background-repeat: no-repeat;   
 }
 
-header {
+.page-header {
     background: rgba(0, 47, 255, 0.993);
     color: white;
 
@@ -20,12 +20,42 @@ header {
     height: auto;
 }
 
+.section-header {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px 5px 0px 0px;
+    margin: 10px 0px 0px 0px;
+    padding: 5px;
+}
+
+.section-header-filter-buttons {
+    margin: 5px 5px 0px 5px;
+}
+
+.section-header-text {
+    margin: 0px 0px 0px 10px;
+}
+
+.people-section {
+    margin: 10px;
+}
+
+.people-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 320px));
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 0px 0px 5px 5px;
+}
+
 .person-card {
     display: grid;
     min-width: 100px;
-    background:rgb(39, 136, 104);
+    background:rgb(230, 235, 233);
     grid-template-rows: repeat(1fr, 4);
     grid-template-columns: repeat(1fr, 4);
+    border-radius: 5px;
+    box-shadow: 5px 3px 50px;
+    margin: 10px 10px 10px 10px;
+    padding: 5px;
 
     grid-template-areas: 
         "photo photo name name"
@@ -35,17 +65,19 @@ header {
 }
 
 .profile-pic {
-    background: tan;
+    /*background: tan;*/
     object-fit: cover;
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    margin: 0px 0px 5px 0px;
     grid-area: photo;
 }
 
 .person-name {
     background: red;
     grid-area: name;
+    font-size: 22px;
     justify-self: left;
     align-self: center;
 }
@@ -53,11 +85,20 @@ header {
 .person-role {
     background: rgb(39, 212, 212);
     grid-area: role;
+    font-size: 16px;
+    margin-bottom: 10px;
+    align-self: center;
 }
+
+.person-skills {
+    grid-area: skill;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 100px));
+}
+
 
 .person-skill {
     background: saddlebrown;
-    grid-area: skill;
+    width: 50px;
 }
 
 .person-campaign {
@@ -65,6 +106,24 @@ header {
     grid-area: campaign;
 }
 
+
+.projects-section {
+    margin: 10px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 320px));
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0px 0px 5px 5px;
+}
+
+.project-card {
+    display: grid;
+    /*
+    grid-template-rows: 300px fit-content(100%) 300px;
+    */
+}
 
 
 h1 {
