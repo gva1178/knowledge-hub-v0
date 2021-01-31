@@ -21,15 +21,29 @@ body {
 }
 
 .section-header {
-    background: red;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px 5px 0px 0px;
     margin: 10px 0px 0px 0px;
+    padding: 5px;
+}
+
+.section-header-filter-buttons {
+    margin: 5px 5px 0px 5px;
+}
+
+.section-header-text {
+    margin: 0px 0px 0px 10px;
+}
+
+.people-section {
+    margin: 10px;
 }
 
 .people-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 320px));
     background: rgba(255, 255, 255, 0.6);
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 5px;
 }
 
 .person-card {
@@ -92,6 +106,24 @@ body {
     grid-area: campaign;
 }
 
+
+.projects-section {
+    margin: 10px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 320px));
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 0px 0px 5px 5px;
+}
+
+.project-card {
+    display: grid;
+    /*
+    grid-template-rows: 300px fit-content(100%) 300px;
+    */
+}
 
 
 h1 {
