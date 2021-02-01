@@ -1,0 +1,10 @@
+
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+        h1 Welcome to the #{title} page
+        h2 #{peopleDatabase[0].name}
