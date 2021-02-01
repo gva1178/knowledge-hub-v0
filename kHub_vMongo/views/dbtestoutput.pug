@@ -7,4 +7,5 @@ html
   body
     block content
         h1 Welcome to the #{title} page
-        h2 #{peopleDatabase[0].name}
+        each val in peopleDatabase
+          h2 #{val.name}

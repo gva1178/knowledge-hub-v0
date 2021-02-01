@@ -13,16 +13,10 @@ router.get('/helloworld', function(req, res, next) {
   res.render('helloworld', { title : "Hello world"});
 })
 
-/*GET test data entry page */
+/*GET test database output page */
 router.get('/dbtestoutput', function(req, res, next) {
   var db = req.db;
   var collection = db.get('peoplecollection');
-  console.log("here");
-  //console.log(collection.find().then);
-  collection.find().toArray(function(e, items) {
-    if (err) throw err;
-    console.log(items);
-  });
   collection.find({}, {}, function(e,docs) {
     res.render('dbtestoutput', {
       title : "Test output",
@@ -30,5 +24,11 @@ router.get('/dbtestoutput', function(req, res, next) {
     });
   });
 });
+
+/*GET test data entry page */
+router.get('/dbtestinput', function(req, res, next) {
+  
+});
+
 
 module.exports = router;

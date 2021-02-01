@@ -17,28 +17,6 @@ db.catch(reason => {
   console.log(reason);
 });
 
-/*
-var MongoClient = require('mongodb').MongoClient;
-
-var client = MongoClient.connect('mongodb://localhost:27017/kHub-testDB');
-
-/*
-, function(err, client) {
-  if (err) throw err;
-  console.log("launching");
-  console.log("\n\n\n HERE \n\n");
-  return client;
-});
-//* - /
-
-var db = client.db('kHub-testDB');
-
-db.collection('peoplecollection').find().toArray(function(err, result){
-  if (err) throw err;
-  console.log(result);
-});
-
-*/
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
