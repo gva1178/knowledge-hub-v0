@@ -1,0 +1,24 @@
+// Not using this
+
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+
+    header(class="page-header")
+      img(id="header-icon" src="images/bluebonnet-icon-2.webp")
+      h1 #{title}
+
+    section(class="form-input")
+      form(id="formAddToDB" name="addToDB" method="post" action="/addToDB")
+        input(id="inputUserName" type="text" placeholder="username" name="username")
+        input(id="inputUserRole" type="text" placeholder="role" name="userrole")
+        // to chance below line to actual image URL or file
+        input(id="inputUserImageURL" type="text" placeholder="images/default-pro-pic.jpg" name="imageURL")
+        input(id="inputSkill1" type="text" placeholder="skill-1" name="userSkill1")
+        input(id="inputSkill2" type="text" placeholder="skill-2" name="userSkill2")
+        input(id="inputCampaign" type="text" placeholder="placeholder-campaign" name="usercampaign")
+        button(id="btnSubmit" type="submit") Submit

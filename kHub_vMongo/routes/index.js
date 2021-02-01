@@ -13,21 +13,51 @@ router.get('/helloworld', function(req, res, next) {
   res.render('helloworld', { title : "Hello world"});
 })
 
-/*GET test data entry page */
+/*GET test database output page */
 router.get('/dbtestoutput', function(req, res, next) {
   var db = req.db;
   var collection = db.get('peoplecollection');
-  console.log("here");
-  //console.log(collection.find().then);
-  collection.find().toArray(function(e, items) {
-    if (err) throw err;
-    console.log(items);
-  });
   collection.find({}, {}, function(e,docs) {
     res.render('dbtestoutput', {
-      title : "Test output",
+      title : "Database output",
       "peopleDatabase" : docs
     });
+  });
+});
+
+/*GET test data entry page */
+router.get('/dbtestinput', function(req, res, next) {
+  res.render('dbtestinput', {
+    title : "Data input"
+  })
+});
+
+router.post('/addToDB', function(req, res) {
+
+  var db = req.db;
+
+  var userName = req.body.username;
+  var userRole = req.body.userrole;
+  var userImageURL = req.body.imageURL;
+  var userSkill1 = req.body.userSkill1;
+  var userSkill2 = req.body.userSkill2;
+  var userCampaign = req.body.usercampaign;
+
+  var collection = db.get('peoplecollection');
+
+  collection.insert({
+    name : userName,
+    role : userRole,
+    imageURL : userImageURL,
+    skill1 : userSkill1,
+    skill2 : userSkill2,
+    campaign : userCampaign
+  }, function (err, doc) {
+    if (err) {
+      res.send("Failed insertion into database")
+    } else {
+      res.redirect("dbtestoutput");
+    }
   });
 });
 
