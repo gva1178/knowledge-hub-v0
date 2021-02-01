@@ -5,9 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // connect to MongoDB using Monk
-/*
+
 const monk = require('monk');
-const db = monk('localhost:27107/kHub-testDB');
+const db = monk('localhost:27017/kHub-testDB');
 console.log("testing: ");
 db.then(() => {
   console.log("Connected correctly to the server");
@@ -16,20 +16,29 @@ db.catch(reason => {
   console.log("Failed to connect to the server");
   console.log(reason);
 });
-*/
 
+/*
 var MongoClient = require('mongodb').MongoClient;
 
-MongoClient.connect('mongodb://localhost:27017/kHub-testDB', function(err, client) {
-  if (err) throw err;
-  console.log("launching")
-  var db = client.db('kHub-testDB')
+var client = MongoClient.connect('mongodb://localhost:27017/kHub-testDB');
 
-  db.collection('peoplecollection').find().toArray(function(err, result){
-    if (err) throw err;
-    console.log(result);
-  });
+/*
+, function(err, client) {
+  if (err) throw err;
+  console.log("launching");
+  console.log("\n\n\n HERE \n\n");
+  return client;
 });
+//* - /
+
+var db = client.db('kHub-testDB');
+
+db.collection('peoplecollection').find().toArray(function(err, result){
+  if (err) throw err;
+  console.log(result);
+});
+
+*/
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
