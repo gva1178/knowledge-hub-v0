@@ -4,6 +4,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// connect to MongoDB using Monk
+const monk = require('monk');
+const db = monk('localhost:27107/kHub-testDB');
+console.log("testing: ");
+db.then(() => {
+  console.log("Connected correctly to the server");
+});
+db.catch(reason => {
+  console.log("Failed to connect to the server");
+  console.log(reason);
+});
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -25,6 +37,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// make DB accessible to router
+app.use(function(req, res, next) {
+  req.db = db;
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
