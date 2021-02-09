@@ -9,18 +9,23 @@ html
     block content
       
       script.
-        document.getElementById('home-button').onclick = function() {
-          alert("Hiya");
-          /*window.location = "www.youtube.com";*/
-        };
+        function goToHomePage() {
+          window.location.href = '/';
+        }
+        function goToTestInputPage() {
+          window.location.href = 'dbtestinput';
+        }
+        function goToTestOutputPage() {
+          window.location.href = 'dbtestoutput';
+        }
 
       header(class="page-header")
         input(type="image" id="page-header-icon" src="images/bluebonnet-icon-2.webp")
         div(class="nav-cluster")
           h1(id="page-header-text") #{title}
-          button(id="home-button" onclick="alert('hello');") Home
-          button(id="test-input-button" onclick="window.location.href = 'localhost:3000/dbtestinput';") Test Input 
-          button(id="test-output-button" onclick="location.href = 'localhost:3000/dbtestoutput';") Test Output
+          button(id="home-button" onclick='goToHomePage()') Home
+          button(id="test-input-button" onclick='goToTestInputPage();') Test Input 
+          button(id="test-output-button" onclick='goToTestOutputPage()') Test Output
       
       section(class="people-section")
         div(class="section-header")

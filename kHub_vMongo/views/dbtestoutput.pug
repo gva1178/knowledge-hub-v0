@@ -10,9 +10,24 @@ html
         //each val in peopleDatabase
         //  h2 #{val.name}
 
+        script.
+          function goToHomePage() {
+            window.location.href = '/';
+          }
+          function goToTestInputPage() {
+            window.location.href = 'dbtestinput';
+          }
+          function goToTestOutputPage() {
+            window.location.href = 'dbtestoutput';
+          }
+
         header(class="page-header")
           img(id="header-icon" src="images/bluebonnet-icon-2.webp")
-          h1 #{title}
+          div(class="nav-cluster")
+            h1(id="page-header-text") #{title}
+            button(id="home-button" onclick='goToHomePage()') Home
+            button(id="test-input-button" onclick='goToTestInputPage();') Test Input 
+            button(id="test-output-button" onclick='goToTestOutputPage()') Test Output
       
         section(class="people-section")
           div(class="section-header")
