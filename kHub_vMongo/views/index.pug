@@ -8,9 +8,24 @@ html
   body 
     block content
       
+      script.
+        function goToHomePage() {
+          window.location.href = '/';
+        }
+        function goToTestInputPage() {
+          window.location.href = 'dbtestinput';
+        }
+        function goToTestOutputPage() {
+          window.location.href = 'dbtestoutput';
+        }
+
       header(class="page-header")
-        img(id="header-icon" src="images/bluebonnet-icon-2.webp")
-        h1 #{title}
+        input(type="image" id="page-header-icon" src="images/bluebonnet-icon-2.webp")
+        div(class="nav-cluster")
+          h1(id="page-header-text") #{title}
+          button(id="home-button" onclick='goToHomePage()') Home
+          button(id="test-input-button" onclick='goToTestInputPage();') Test Input 
+          button(id="test-output-button" onclick='goToTestOutputPage()') Test Output
       
       section(class="people-section")
         div(class="section-header")
@@ -21,38 +36,46 @@ html
           div(class="person-card")
             img(class="profile-pic" src="images/Gabriel-pro-pic.jpg")
             h2(class="person-name") Gabriel Voorhis-Allen
-            div(class="person-role") Technical Fellow
+            h3(class="person-role") Technical Fellow
             div(class="person-skills")
-              div(class="person-skill") skills-1
-              div(class="person-skill") skills-2
-            div(class="person-campaign") GA-PSC-4 campaign    
+              button(class="person-skill") skills-1
+              button(class="person-skill") skills-2
+            div(class="person-campaigns") 
+              button(class="person-campaign") GA-PSC-4
+              button(class="person-campaign") campaign-2    
         
           div(class="person-card")
             img(class="profile-pic" src="images/Aidan-pro-pic.jpg")
             h2(class="person-name") Aidan Voorhis-Allen
-            div(class="person-role") Data Fellow
+            h3(class="person-role") Data Fellow
             div(class="person-skills")
-              div(class="person-skill") skills-1
-              div(class="person-skill") skills-2
-            div(class="person-campaign") campaign
+              button(class="person-skill") skills-1
+              button(class="person-skill") skills-2
+            div(class="person-campaigns") 
+              button(class="person-campaign") campaign-1
+              button(class="person-campaign") campaign-2
       
           div(class="person-card")
             img(class="profile-pic" src="images/Ethan-pro-pic.jpg")
             h2(class="person-name") Ethan Oro
-            div(class="person-role") Data Fellow
+            h3(class="person-role") Data Fellow
             div(class="person-skills")
-              div(class="person-skill") skills-1
-              div(class="person-skill") skills-2
-            div(class="person-campaign") campaign
+              button(class="person-skill") skills-1
+              button(class="person-skill") skills-2
+            div(class="person-campaigns") 
+              button(class="person-campaign") campaign-1
+              button(class="person-campaign") campaign-2
             
           div(class="person-card")
             img(class="profile-pic" src="images/Paul-pro-pic.jpg")
             h2(class="person-name") Paul Dingus
-            div(class="person-role") Co-founder and Technical Director
+            h3(class="person-role") Co-founder and Technical Director
             div(class="person-skills")
-              div(class="person-skill") skills-1
-              div(class="person-skill") skills-2
-            div(class="person-campaign") campaign
+              button(class="person-skill") skills-1
+              button(class="person-skill") skills-2
+            div(class="person-campaigns") 
+              button(class="person-campaign") campaign-1
+              button(class="person-campaign") campaign-2
 
 
       section(class="projects-section")

@@ -14,14 +14,49 @@ a {
   color: white;
 
   display: grid;
-  grid-template-columns: auto auto;
-  justify-items: left;
-
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
 }
 
-#header-icon {
+#page-header-icon {
+  /*
   width: 80%;
   height: auto;
+  */
+  width: 200px;
+  height: auto;
+  padding: 10px; 
+}
+
+.nav-cluster {
+  display: grid;
+  grid-template-areas: 
+    "title title title"
+    "home input output";
+  justify-items: center;
+  align-items: center;
+  padding: 5px;
+}
+
+#page-header-text {
+  grid-area: title;
+  font-size: 14px;
+}
+
+#home-button {
+  grid-area: home;
+  margin: 5px;
+}
+
+#test-input-button {
+  grid-area: input;
+  margin: 5px;
+}
+
+#test-output-button {
+  grid-area: output;
+  margin: 5px;
 }
 
 .section-header {
@@ -79,37 +114,47 @@ a {
 }
 
 .person-name {
-  background: red;
+ /*background:rgba(39, 212, 212, 0.2);*/
   grid-area: name;
-  font-size: 22px;
+  font-size: 16px;
   justify-self: left;
   align-self: center;
+  margin: 3px 3px 3px 3px;
 }
 
 .person-role {
-  background: rgb(39, 212, 212);
+  /*background: rgba(39, 212, 212, 0.3);*/
   grid-area: role;
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 12px;
+  margin: 3px 3px 10px 3px;
   align-self: center;
 }
 
 .person-skills {
+  background-color: rgba(255, 255, 255, 0.5);
   grid-area: skill;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 100px));
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 150px));
 }
 
 
 .person-skill {
-  background: saddlebrown;
-  width: 50px;
+  background: rgba(253, 245, 230, 0.8);
+  width: 100px;
+  margin: 5px;
+}
+
+.person-campaigns {
+  background: rgba(255, 255, 255, 0.5);
+  grid-area: campaign;
+  justify-items: center;
 }
 
 .person-campaign {
-  background: slateblue;
-  grid-area: campaign;
+  background: rgba(253, 245, 230, 0.8);
+  width: 100px;
+  margin: 5px;
 }
-
 
 .projects-section {
   margin: 10px;
